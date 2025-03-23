@@ -20,7 +20,8 @@ const scene = new THREE.Scene()
 
 // Создаём материал
 const outerMaterial = new THREE.MeshPhysicalMaterial({
-    color: 0xffffff,
+    color: new THREE.Color(0x0033ff).convertSRGBToLinear(), // Правильно применяем методы
+    // color: 0x0033ff,
     roughness: 0.0,
     metalness: 0.0,
     clearcoat: 1.0,
@@ -34,10 +35,13 @@ const outerMaterial = new THREE.MeshPhysicalMaterial({
 })
 
 const innerMaterial = new THREE.MeshStandardMaterial({
-    color: 0x004CFF,
+    color: new THREE.Color(0xff00dd).convertSRGBToLinear(), // Правильно применяем методы
+    color: 0xff00dd,
     roughness: 0,
     metalness: 1.0
 })
+
+
 
 // Загружаем HDRI-карту
 const rgbeLoader = new RGBELoader()
@@ -92,6 +96,7 @@ animationFolder.add({ toggleAnimation: () => {
         isAnimationPlaying = !isAnimationPlaying
     }
 } }, 'toggleAnimation').name('Play/Pause Animation')
+
 
 
 // === lil-gui настройки материалов ===
