@@ -6,6 +6,9 @@ on:
       - main  # Trigger workflow on push to the main branch
   workflow_dispatch: # Allows manual triggering of the workflow
 
+      - name: Show git status
+        run: git status
+
 jobs:
   commit:
     runs-on: ubuntu-latest
