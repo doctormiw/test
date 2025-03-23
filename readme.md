@@ -1,4 +1,4 @@
-# Three.js Journey
+https://doctormiw.github.io/test/
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
