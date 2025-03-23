@@ -35,3 +35,11 @@ jobs:
           git commit -m "🔄 Auto-update build [skip ci]" || exit 0
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
 
+            - name: Deploy to `gh-pages`
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: dist
+
+
